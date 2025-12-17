@@ -1,0 +1,90 @@
+---
+name : "jibran"
+age : 21
+nationality : "Pak"
+
+---
+
+Quanlities:
+  - Paki
+  - Undergrad Student
+  - Nice
+
+---
+
+Education:
+  School : "Educators"
+  College : "Dj Sindh"
+  University : "NED"
+  isGraduate : false
+  Employeed : null
+---
+
+Skills : [1,2,3,4,5,5]
+---
+Prod : {a : "apple" , b : "banana"}
+---
+Intro : |
+  This is JIbrna 
+  I am a boy
+  Lerning mlops and ai
+
+---
+About  : >
+  This is a boy whose
+  ise doing word
+---
+Not a number : .nan
+infinity : .inf
+floating : !!float 56.12 # u can add type too !! <type>
+exponentil : 1e-9
+
+---
+list:
+ - - 1
+   - 2
+   - 3
+ - - a 
+   - b 
+   - c
+
+---
+
+pairs : !!pairs
+  - role: [Student , Teacher]
+  - role : [Learner , Husbend]
+
+
+Pple_names : !!set
+  ? JIbrna
+  ? ali
+  ? samar
+
+---
+Friends : !!omap
+  - name: JIbrna
+  - age: 21
+  - About:
+      profession: Student
+      School: "Educators"
+      University: "NED"
+      isJob: false
+
+Jb : !!omap
+  - About:
+      school : Educotrs
+      college : DjSindh
+      University : null
+
+---
+likings: &likes
+  fruit : "apple"
+  color  : red
+  car : lambo
+
+Jibran:
+  Edu : Undergrad
+  <<: *likes
+  car : laiana # over -written from lambot to laiana
+
+

@@ -5,6 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 import string
+import yaml
 import nltk
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -31,6 +32,22 @@ file_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
+
+def load_params(params_path:str):
+    try :
+        with open(params_path , "r") as file:
+            params = yaml.safe_load(file)
+        logger.debug("Parameters sucessfully fethced from %s" ,params_path)
+        return params
+    except FileNotFoundError:
+        logger.error("File not found %s" , params_path)
+        raise
+    except yaml.YAMLError as e:
+        logger.error("Yaml error  %s " , e)
+        raise
+    except Exception as e:
+        logger.error("Unexpected error occur %s" , e)
+        raise
 def transform_text(text):
     """
     Transforms the input text by converting it to lowercase, tokenizing, removing stopwords and punctuation, and stemming.
